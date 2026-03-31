@@ -2,49 +2,140 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homeless Launcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        body {
+        /* Reset podstawowych ustawień przeglądarki */
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Tło całej strony */
+        body {
+            background-color: #24272b; /* Ciemnoszary kolor tła z projektu */
+            color: #ffffff;
             height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            background: #0f0f0f;
-            font-family: Arial;
-            color: white;
+            justify-content: center;
         }
 
-        .box {
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.05);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
+        /* Główny kontener trzymający wszystko */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            border-radius: 15px;
-            background: #444;
-            color: white;
+        /* Lewa strona z tekstem */
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+            max-width: 55%;
+        }
+
+        /* Logo w lewym górnym rogu */
+        .logo {
+            width: 50px; /* Dostosuj rozmiar w razie potrzeby */
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Główne nagłówki */
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #8c8f94; /* Szarawy kolor podtytułu */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        /* Przycisk pobierania */
+        .download-btn {
+            background-color: #404652;
+            color: #ffffff;
             text-decoration: none;
-            transition: 0.3s;
+            padding: 15px 40px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            transition: background-color 0.3s ease;
         }
 
-        .btn:hover {
-            background: #666;
+        /* Efekt najechania myszką na przycisk */
+        .download-btn:hover {
+            background-color: #535a69;
+            cursor: pointer;
+        }
+
+        /* Prawa strona z obrazkiem */
+        .right-side {
+            max-width: 40%;
+        }
+
+        .right-side img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            /* To tworzy niebieską ramkę i świecącą poświatę z Twojego projektu */
+            border: 3px solid #33a1ff;
+            box-shadow: 0 0 30px rgba(51, 161, 255, 0.4);
+        }
+
+        /* Poprawki dla mniejszych ekranów (telefony) */
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+                margin-top: 80px;
+            }
+            .left-side {
+                align-items: center;
+                max-width: 100%;
+            }
+            .right-side {
+                max-width: 80%;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="box">
-    <h1>Homeless Launcher</h1>
-    <a class="btn" href="#">Pobierz</a>
-</div>
+    <img src="TUTAJ_LINK_DO_TWOJEGO_LOGA.png" alt="Logo" class="logo">
+
+    <div class="container">
+        
+        <div class="left-side">
+            <h1>ZAINSTALUJ NOWY<br>HOMELESS LAUNCHER</h1>
+            <h2>WSZYSTKIE GRY W JEDNYM MIEJSCU</h2>
+            
+            <a href="TUTAJ_LINK_DO_POBRANIA_Z_GITHUB" class="download-btn">pobierz na Windows</a>
+        </div>
+
+        <div class="right-side">
+            <img src="TUTAJ_LINK_DO_GRAFIKI_PO_PRAWEJ.png" alt="Widok aplikacji">
+        </div>
+
+    </div>
 
 </body>
 </html>
